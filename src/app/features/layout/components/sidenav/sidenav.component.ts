@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NbMenuItem } from '@nebular/theme';
 
 @Component({
   selector: 'app-sidenav',
@@ -11,5 +12,19 @@ export class SidenavComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  items: NbMenuItem[] = [
+    {
+      title: 'Departments',
+      icon: 'lock-outline',
+      link: 'departments',
+
+    },
+    {
+      title: 'Employees',
+      icon: 'person-outline',
+      link: 'employees',
+    },
+  ];
 
 }
