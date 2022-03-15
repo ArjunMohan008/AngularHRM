@@ -1,9 +1,9 @@
 <div class="container">
-  <nb-card accent="info">
+  <nb-card accent="info" class="departmentFormCard">
     <nb-card-header>
       {{ isEditing ? "Update" : "Add" }} Department</nb-card-header
     >
-    <nb-card-body>
+    <nb-card-body class="departmentFormCardBody">
       <form [formGroup]="departmentForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <mat-form-field appearance="outline">
