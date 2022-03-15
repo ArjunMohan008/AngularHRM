@@ -10,6 +10,7 @@ import {
   NbSelectModule,
   NbListModule,
   NbMenuModule,
+  NbInputModule,
 } from '@nebular/theme';
 
 const mm = [
@@ -23,6 +24,7 @@ const mm = [
   NbSelectModule,
   NbListModule,
   NbMenuModule,
+  NbInputModule
 ];
 
 

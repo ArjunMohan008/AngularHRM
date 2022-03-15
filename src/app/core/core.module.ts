@@ -4,6 +4,7 @@ import { MaterialModule } from './material/material.module';
 import { HttpClientModule } from '@angular/common/http'
 import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router'
+import { NebularModule } from "./nebular/nebular.module";
 
 @NgModule({
   declarations: [],
@@ -13,14 +14,16 @@ import { RouterModule } from '@angular/router'
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    NebularModule
   ],
   exports: [
     MaterialModule,
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    NebularModule
   ]
 })
 export class CoreModule { }
