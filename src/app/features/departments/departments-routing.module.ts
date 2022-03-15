@@ -4,8 +4,11 @@ import { AddEditDepartmentComponent } from './components/add-edit-department/add
 import { ListDepartmentsComponent } from './components/list-departments/list-departments.component';
 import { DepartmentsComponent } from './departments.component';
 
-const routes: Routes = [{ path: '', component: ListDepartmentsComponent
-}];
+const routes: Routes = [
+  { path: '', component: ListDepartmentsComponent},
+  { path: 'add', component: AddEditDepartmentComponent},
+  { path: 'edit/:id', component: AddEditDepartmentComponent},
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

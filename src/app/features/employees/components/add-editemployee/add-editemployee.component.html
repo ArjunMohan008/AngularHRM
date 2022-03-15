@@ -1,8 +1,6 @@
 <div class="container">
   <nb-card accent="info" class="employeeFormCard">
-    <nb-card-header>
-      {{ isEditing ? "Update" : "Add" }} Employee</nb-card-header
-    >
+    <nb-card-header> {{ isEditing ? "Edit" : "Add" }} Employee</nb-card-header>
     <nb-card-body class="employeeFormCardBody">
       <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
@@ -271,7 +269,7 @@
             class="btn btn-primary"
             [disabled]="employeeForm.invalid"
           >
-            {{ isEditing ? "Update" : "Add" }} Employee
+            {{ isEditing ? "Edit" : "Add" }} Employee
           </button>
 
           <button mat-raised-button type="button" (click)="onReset()">

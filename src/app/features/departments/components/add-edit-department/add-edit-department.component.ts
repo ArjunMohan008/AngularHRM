@@ -20,6 +20,9 @@ export class AddEditDepartmentComponent implements OnInit {
   constructor(private router: Router, private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    if (this.router.url.includes('/edit')) {
+      this.isEditing = true;
+    }
   }
 
   onSubmit(){

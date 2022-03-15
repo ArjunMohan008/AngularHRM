@@ -1,7 +1,7 @@
 <div class="container">
   <nb-card accent="info" class="departmentFormCard">
     <nb-card-header>
-      {{ isEditing ? "Update" : "Add" }} Department</nb-card-header
+      {{ isEditing ? "Edit" : "Add" }} Department</nb-card-header
     >
     <nb-card-body class="departmentFormCardBody">
       <form [formGroup]="departmentForm" (ngSubmit)="onSubmit()">
@@ -89,7 +89,7 @@
             class="btn btn-primary"
             [disabled]="!departmentForm.valid"
           >
-            {{ isEditing ? "Update" : "Add" }} Department
+            {{ isEditing ? "Edit" : "Add" }} Department
           </button>
 
           <button mat-raised-button type="button" (click)="onReset()">

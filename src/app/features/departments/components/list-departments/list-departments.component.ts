@@ -107,9 +107,7 @@ export class ListDepartmentsComponent implements OnInit {
   }
 
   editDepartment(id: string) {
-    this.router.navigateByUrl('/departments/edit/' + id);
-
-    console.log(id);
+    this.router.navigateByUrl('dashboard/departments/edit/' + id);
   }
 
 }

@@ -109,7 +109,7 @@ export class ListEmployeesComponent implements OnInit {
   }
 
   editDepartment(id: string) {
-    this.router.navigateByUrl('/departments/edit/' + id);
+    this.router.navigateByUrl('dashboard/departments/edit/' + id);
 
   }
 
