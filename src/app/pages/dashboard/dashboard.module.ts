@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { NbSidebarModule, NbLayoutModule, NbButtonModule } from '@nebular/theme';
+import { LayoutModule } from 'src/app/features/layout/layout.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { NbSidebarModule, NbLayoutModule, NbButtonModule } from '@nebular/theme'
     DashboardRoutingModule,
     NbSidebarModule.forRoot(),
     NbLayoutModule,
-    NbButtonModule
+    NbButtonModule,
+    LayoutModule
   ]
 })
 export class DashboardModule { }
