@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddEditDepartmentComponent } from './components/add-edit-department/add-edit-department.component';
-
+import { ListDepartmentsComponent } from './components/list-departments/list-departments.component';
 import { DepartmentsComponent } from './departments.component';
 
-const routes: Routes = [{ path: '', component: AddEditDepartmentComponent
+const routes: Routes = [{ path: '', component: ListDepartmentsComponent
 }];
 
 @NgModule({
