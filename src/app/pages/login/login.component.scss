@@ -5,3 +5,24 @@
   align-items: center;
   height: 100vh;
 }
+
+.loginForm{
+  padding: 2rem auto;
+}
+
+.btnGroup{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.form-group{
+  margin:  2rem auto;
+}
+
+::ng-deep .mat-card {
+  width: 25%;
+}
+
+::ng-deep .mat-form-field{
+  width: 100%;
+}
