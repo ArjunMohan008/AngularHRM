@@ -1,0 +1,284 @@
+<div class="container">
+  <nb-card accent="info" class="employeeFormCard">
+    <nb-card-header>
+      {{ isEditing ? "Update" : "Add" }} Employee</nb-card-header
+    >
+    <nb-card-body class="employeeFormCardBody">
+      <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input
+              matInput
+              placeholder="First Name"
+              formControlName="firstName"
+            />
+            <mat-error *ngIf="employeeForm.get('firstName').invalid">
+              <mat-error
+                *ngIf="employeeForm.get('firstName').hasError('required')"
+              >
+                First Name is required
+              </mat-error>
+              <mat-error
+                *ngIf="employeeForm.get('firstName').hasError('minlength')"
+              >
+                First Name must be at least 3 characters long
+              </mat-error>
+              <mat-error
+                *ngIf="employeeForm.get('firstName').hasError('maxlength')"
+              >
+                First Name cannot be more than 50 characters long
+              </mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input
+              matInput
+              placeholder="Last Name"
+              formControlName="lastName"
+            />
+            <mat-error *ngIf="employeeForm.get('lastName').invalid">
+              <mat-error
+                *ngIf="employeeForm.get('lastName').hasError('required')"
+              >
+                Last Name is required
+              </mat-error>
+              <mat-error
+                *ngIf="employeeForm.get('lastName').hasError('minlength')"
+              >
+                Last Name must be at least 3 characters long
+              </mat-error>
+              <mat-error
+                *ngIf="employeeForm.get('lastName').hasError('maxlength')"
+              >
+                Last Name cannot be more than 50 characters long
+              </mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <!-- mat-form- for image  -->
+        <!-- <input class="ng-hide" id="input-file-id" multiple type="file" />
+        <label for="input-file-id" class="md-button md-raised md-primary"
+          >Profile Image</label
+        > -->
+
+        <div class="form-group">
+          <mat-label class="image_label" for="input-file-id">Image</mat-label>
+          <input class="ng-hide" id="input-file-id" multiple type="file" />
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" formControlName="email" />
+            <mat-error *ngIf="employeeForm.get('email').invalid">
+              <mat-error *ngIf="employeeForm.get('email').hasError('required')">
+                Email is required
+              </mat-error>
+              <mat-error
+                *ngIf="employeeForm.get('email').hasError('minlength')"
+              >
+                Email must be at least 3 characters long
+              </mat-error>
+              <mat-error
+                *ngIf="employeeForm.get('email').hasError('maxlength')"
+              >
+                Email cannot be more than 50 characters long
+              </mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Phone</mat-label>
+            <input matInput placeholder="Phone" formControlName="phone" />
+            <mat-error *ngIf="employeeForm.get('phone').invalid">
+              <mat-error *ngIf="employeeForm.get('phone').hasError('required')">
+                Phone is required
+              </mat-error>
+              <mat-error
+                *ngIf="employeeForm.get('phone').hasError('minlength')"
+              >
+                Phone must be at least 3 characters long
+              </mat-error>
+              <mat-error
+                *ngIf="employeeForm.get('phone').hasError('maxlength')"
+              >
+                Phone cannot be more than 50 characters long
+              </mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Address</mat-label>
+            <input matInput placeholder="Address" formControlName="address" />
+            <mat-error *ngIf="employeeForm.get('address').invalid">
+              <mat-error
+                *ngIf="employeeForm.get('address').hasError('required')"
+              >
+                Address is required
+              </mat-error>
+              <mat-error
+                *ngIf="employeeForm.get('address').hasError('minlength')"
+              >
+                Address must be at least 3 characters long
+              </mat-error>
+              <mat-error
+                *ngIf="employeeForm.get('address').hasError('maxlength')"
+              >
+                Address cannot be more than 50 characters long
+              </mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Department</mat-label>
+            <mat-select formControlName="department" placeholder="Department">
+              <mat-option value="IT">IT</mat-option>
+              <mat-option value="HR">HR</mat-option>
+              <mat-option value="Marketing">Marketing</mat-option>
+              <mat-option value="Sales">Sales</mat-option>
+            </mat-select>
+            <mat-error *ngIf="employeeForm.get('department').invalid">
+              <mat-error
+                *ngIf="employeeForm.get('department').hasError('required')"
+              >
+                Department is required
+              </mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Job Title</mat-label>
+            <mat-select formControlName="jobTitle" placeholder="Job Title">
+              <mat-option value="Software Engineer"
+                >Software Engineer</mat-option
+              >
+              <mat-option value="Software Developer"
+                >Software Developer</mat-option
+              >
+              <mat-option value="Software Tester">Software Tester</mat-option>
+              <mat-option value="Software Architect"
+                >Software Architect</mat-option
+              >
+              <mat-option value="Software Manager">Software Manager</mat-option>
+              <mat-option value="Software Analyst">Software Analyst</mat-option>
+              <mat-option value="Software Engineer"
+                >Software Engineer</mat-option
+              >
+              <mat-option value="Software Developer"
+                >Software Developer</mat-option
+              >
+              <mat-option value="Software Tester">Software Tester</mat-option>
+              <mat-option value="Software Architect"
+                >Software Architect</mat-option
+              >
+              <mat-option value="Software Manager">Software Manager</mat-option>
+              <mat-option value="Software Analyst">Software Analyst</mat-option>
+            </mat-select>
+            <mat-error *ngIf="employeeForm.get('jobTitle').invalid">
+              <mat-error
+                *ngIf="employeeForm.get('jobTitle').hasError('required')"
+              >
+                Job Title is required
+              </mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Hire Date</mat-label>
+            <input
+              matInput
+              [matDatepicker]="picker"
+              placeholder="Hire Date"
+              formControlName="hireDate"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="employeeForm.get('hireDate').invalid">
+              <mat-error
+                *ngIf="employeeForm.get('hireDate').hasError('required')"
+              >
+                Hire Date is required
+              </mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Salary</mat-label>
+            <input
+              type="number"
+              matInput
+              placeholder="Salary"
+              formControlName="salary"
+            />
+            <mat-error *ngIf="employeeForm.get('salary').invalid">
+              <mat-error
+                *ngIf="employeeForm.get('salary').hasError('required')"
+              >
+                Salary is required
+              </mat-error>
+              <mat-error
+                *ngIf="employeeForm.get('salary').hasError('minlength')"
+              >
+                Salary must be at least 3 characters long
+              </mat-error>
+              <mat-error
+                *ngIf="employeeForm.get('salary').hasError('maxlength')"
+              >
+                Salary cannot be more than 50 characters long
+              </mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Manager</mat-label>
+            <mat-select formControlName="manager" placeholder="Manager">
+              <mat-option value="John Doe">John Doe</mat-option>
+              <mat-option value="Jane Doe">Jane Doe</mat-option>
+              <mat-option value="Jack Doe">Jack Doe</mat-option>
+              <mat-option value="Jill Doe">Jill Doe</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="btn-group">
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="employeeForm.invalid"
+          >
+            {{ isEditing ? "Update" : "Add" }} Employee
+          </button>
+
+          <button mat-raised-button type="button" (click)="onReset()">
+            Reset
+          </button>
+        </div>
+      </form>
+    </nb-card-body>
+  </nb-card>
+</div>
