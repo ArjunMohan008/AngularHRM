@@ -60,22 +60,136 @@
         <div class="form-group">
           <mat-form-field appearance="outline">
             <mat-label>Manager</mat-label>
-            <input matInput placeholder="Manager" formControlName="manager" />
-            <mat-error *ngIf="departmentForm.get('manager').invalid">
+            <mat-select formControlName="manager" placeholder="Manager">
+              <mat-option value="John Doe">John Doe</mat-option>
+              <mat-option value="Jane Doe">Jane Doe</mat-option>
+              <mat-option value="Jack Doe">Jack Doe</mat-option>
+              <mat-option value="Jill Doe">Jill Doe</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Location</mat-label>
+            <mat-select formControlName="location" placeholder="Location">
+              <mat-option value="New York">New York</mat-option>
+              <mat-option value="Los Angeles">Los Angeles</mat-option>
+              <mat-option value="Chicago">Chicago</mat-option>
+              <mat-option value="Houston">Houston</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Phone</mat-label>
+            <input
+              matInput
+              placeholder="Phone"
+              formControlName="phone"
+              type="tel"
+            />
+            <mat-error *ngIf="departmentForm.get('phone').invalid">
               <mat-error
-                *ngIf="departmentForm.get('manager').hasError('required')"
+                *ngIf="departmentForm.get('phone').hasError('required')"
               >
-                Manager is required
+                Phone is required
               </mat-error>
               <mat-error
-                *ngIf="departmentForm.get('manager').hasError('minlength')"
+                *ngIf="departmentForm.get('phone').hasError('minlength')"
               >
-                Manager must be at least 3 characters long
+                Phone must be at least 3 characters long
               </mat-error>
               <mat-error
-                *ngIf="departmentForm.get('manager').hasError('maxlength')"
+                *ngIf="departmentForm.get('phone').hasError('maxlength')"
               >
-                Manager cannot be more than 50 characters long
+                Phone cannot be more than 50 characters long
+              </mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Fax</mat-label>
+            <input
+              matInput
+              placeholder="Fax"
+              formControlName="fax"
+              type="tel"
+            />
+            <mat-error *ngIf="departmentForm.get('fax').invalid">
+              <mat-error *ngIf="departmentForm.get('fax').hasError('required')">
+                Fax is required
+              </mat-error>
+              <mat-error
+                *ngIf="departmentForm.get('fax').hasError('minlength')"
+              >
+                Fax must be at least 3 characters long
+              </mat-error>
+              <mat-error
+                *ngIf="departmentForm.get('fax').hasError('maxlength')"
+              >
+                Fax cannot be more than 50 characters long
+              </mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              placeholder="Email"
+              formControlName="email"
+              type="email"
+            />
+            <mat-error *ngIf="departmentForm.get('email').invalid">
+              <mat-error
+                *ngIf="departmentForm.get('email').hasError('required')"
+              >
+                Email is required
+              </mat-error>
+              <mat-error
+                *ngIf="departmentForm.get('email').hasError('minlength')"
+              >
+                Email must be at least 3 characters long
+              </mat-error>
+              <mat-error
+                *ngIf="departmentForm.get('email').hasError('maxlength')"
+              >
+                Email cannot be more than 50 characters long
+              </mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Website</mat-label>
+            <input
+              matInput
+              placeholder="Website"
+              formControlName="website"
+              type="url"
+            />
+            <mat-error *ngIf="departmentForm.get('website').invalid">
+              <mat-error
+                *ngIf="departmentForm.get('website').hasError('required')"
+              >
+                Website is required
+              </mat-error>
+              <mat-error
+                *ngIf="departmentForm.get('website').hasError('minlength')"
+              >
+                Website must be at least 3 characters long
+              </mat-error>
+              <mat-error
+                *ngIf="departmentForm.get('website').hasError('maxlength')"
+              >
+                Website cannot be more than 50 characters long
               </mat-error>
             </mat-error>
           </mat-form-field>

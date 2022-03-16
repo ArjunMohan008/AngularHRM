@@ -15,6 +15,11 @@ export class AddEditDepartmentComponent implements OnInit {
     name: [null, Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(15)])],
     description: [null, Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(8)])],
     manager: [null, Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(8)])],
+    location: [null, Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(8)])],
+    phone: [null, Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(8)])],
+    fax: [null, Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(8)])],
+    email: [null, Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(8)])],
+    website: [null, Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(8)])],
   });
 
   constructor(private router: Router, private fb: FormBuilder) { }
