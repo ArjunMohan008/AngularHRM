@@ -113,5 +113,9 @@ export class ListEmployeesComponent implements OnInit {
 
   }
 
+  addEmployee() {
+    this.router.navigateByUrl('dashboard/employees/add');
+  }
+
 
 }
