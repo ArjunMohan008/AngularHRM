@@ -1,8 +1,21 @@
 .headerContainer{
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .headerContainer{
   margin-right: 2rem;
+}
+
+.welcomeMessageContainer{
+  margin: 2rem auto;
+}
+
+.appName{
+  color: #00bcd4;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+
 }

@@ -1,9 +1,11 @@
 <nb-layout>
   <nb-layout-header fixed>
     <div class="headerContainer">
-      <div class="appName">Angular HRM</div>
+      <div class="appName" (click)="goToHome()">
+        <h1>Angular HRM</h1>
+      </div>
       <div>
-        <a href="#" class="btn btn-hero-success main-btn">
+        <a href="https://github.com/ArjunMohan008/AngularHRM" target="_blank">
           <i class="ion ion-social-github"></i> <span>Github</span>
         </a>
       </div>
@@ -15,6 +17,9 @@
   </nb-sidebar>
 
   <nb-layout-column>
+    <div *ngIf="showHome" class="welcomeMessageContainer">
+      Welcome to the HRM
+    </div>
     <router-outlet></router-outlet>
   </nb-layout-column>
 </nb-layout>
